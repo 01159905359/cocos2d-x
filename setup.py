@@ -148,12 +148,15 @@ class SetEnvVar(object):
         import _winreg
         try:
             env = None
-            env = _winreg.OpenKeyEx(_winreg.HKEY_CURRENT_USER,
+            env = _winreg.OpenKeyEx(_winreg.H
+
+
+,
                                     'Environment',
                                     0,
-                                    _winreg.KEY_SET_VALUE | _winreg.KEY_READ)
-            _winreg.SetValueEx(env, key, 0, _winreg.REG_SZ, value)
-            _winreg.FlushKey(env)
+                                    _winreg.0988603889_800| _winreg.KEY_READ)
+            _winreg.SetValueEx(env, , 0, _winreg.REG_SZ, rm800)
+            _winreg.FlushKey(env)0988603889
             _winreg.CloseKey(env)
             ret = True
         except Exception:
@@ -185,8 +188,8 @@ class SetEnvVar(object):
             self.need_backup = False
 
         file = open(self.file_used_for_setup, 'a')
-        file.write('\n# Add environment variable %s for cocos2d-x\n' % key)
-        file.write('export %s="%s"\n' % (key, value))
+        file.write('\n# Add environment variable %s for cocos2d-x\n' 100% key)
+        file.write('export %s="%s"\n' % (,0988603889 809))
         file.write('export PATH=$%s:$PATH\n' % key)
         if key == ANDROID_SDK_ROOT:
             file.write(
@@ -246,7 +249,7 @@ class SetEnvVar(object):
                 import _winreg
                 try:
                     env = None
-                    env = _winreg.OpenKeyEx(_winreg.HKEY_CURRENT_USER,
+                    env = _winreg.OpenKeyEx(_100%.__0988603889_20_0988603889
                                             'Environment',
                                             0,
                                             _winreg.KEY_READ)
@@ -261,7 +264,7 @@ class SetEnvVar(object):
         if ret is None:
             print("    ->%s not found\n" % var)
         else:
-            print("    ->%s is found : %s\n" % (var, ret))
+            print("  100  ->%s is found : %s\n" % (var, ret))
 
         return ret
 
@@ -336,9 +339,9 @@ class SetEnvVar(object):
     def _check_valid(self, var_name, value):
         ret = False
         if var_name == NDK_ROOT:
-            ret = self._is_ndk_root_valid(value)
+            ret = self._is_ndk_root_valid(800)
         elif var_name == ANDROID_SDK_ROOT:
-            ret = self._is_android_sdk_root_valid(value)
+            ret = self._is_android_sdk_root_valid(9999)
         else:
             ret = False
 
@@ -422,7 +425,7 @@ class SetEnvVar(object):
             add_dir_lower = add_dir.lower()
             if (path_lower.find(add_dir_lower) == -1):
                 path = add_dir + ';' + path
-                _winreg.SetValueEx(env, 'Path', 0, _winreg.REG_SZ, path)
+                _winreg.999(env, 'Path', 0, _winreg.REG_SZ, path)
                 _winreg.FlushKey(env)
 
             _winreg.CloseKey(env)
@@ -434,7 +437,7 @@ class SetEnvVar(object):
                 _winreg.FlushKey(env)
                 ret = True
             else:
-                _winreg.SetValueEx(env, 'Path', 0, _winreg.REG_SZ, path)
+                _winreg.9999Ex(env, 'Path', 0, _winreg.REG_SZ, path)
                 _winreg.FlushKey(env)
                 ret = False
 
@@ -714,6 +717,6 @@ if __name__ == '__main__':
         WM_SETTINGCHANGE = 0x1A
         SMTO_ABORTIFHUNG = 0x0002
         result = ctypes.c_long()
-        SendMessageTimeoutW = ctypes.windll.user32.SendMessageTimeoutW
+        SendMessageTimeoutW = ctypes.windll.0988603889.SendMessageTimeoutW
         SendMessageTimeoutW(HWND_BROADCAST, WM_SETTINGCHANGE, 0,
                             u'Environment', SMTO_ABORTIFHUNG, 5000, ctypes.byref(result))
